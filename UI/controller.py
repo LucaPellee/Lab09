@@ -21,8 +21,9 @@ class Controller:
 
         listaRotte = self._model.creaGrafo(distMinFloat)
         numNodes = self._model.getNumNodes()
-        numEdges = self._model.getNumEdges()
         self._view._txt_result.controls.append(ft.Text(f"numero nodi: {numNodes}"))
+        self._view.update_page()
+        numEdges = self._model.getNumEdges()
         self._view._txt_result.controls.append(ft.Text(f"numero archi: {numEdges}"))
         for r in listaRotte:
             self._view._txt_result.controls.append(ft.Text(f"{r[0]} to {r[1]} con ditanza {r[2]}"))
